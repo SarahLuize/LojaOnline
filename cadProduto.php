@@ -8,6 +8,8 @@ if (isset($_POST['btnSalvar'])) {
     $resultado = $pdo->prepare("INSERT INTO Produto (nome, preco, categoria) VALUES(?, ?, ?)");
     $resultado->execute([$nome, $preco, 'Informatica']);
 
+    header("Location: produto.php");
+
     //$sql = "INSERT INTO Produto (nome, preco, categoria) VALUES('$nome', $preco, 'Informatica')";
     //$resultado = $conexao->query($sql);
     //header("Location: produto.php");

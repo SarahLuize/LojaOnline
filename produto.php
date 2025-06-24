@@ -36,7 +36,8 @@ if(isset($_POST['btnApagar'])){
             <td><?php echo $linha['nome'] ?></td>
             <td><?php echo "R$ " . $linha ['preco'] ?></td>
             <td>Editar</td>
-            <td><form action="" method="POST">
+            <td>
+                <form action="excluir.php" method="POST">
                 <button type="submit" name="btnApagar" value="<?php echo $linha['id'] ?>">Apagar</button>
                 </form>
             </td>

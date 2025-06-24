@@ -6,10 +6,6 @@ if(isset($_POST['btnApagar'])){
     $sql = "DELETE FROM Produto WHERE id = $id";
     $result = $conexao->query($sql);
 }
-
-$sql = "SELECT * FROM Produto";
-$resultado = $conexao->query($sql);
-$conexao->close();
 ?>
 
 
@@ -32,7 +28,9 @@ $conexao->close();
             <th>Editar</th>
             <th>Apagar</th>
         </tr>
-        <?php while($linha = $resultado->fetch_assoc()):?>
+        <?php 
+        $resultado = 
+        while($linha = $resultado->fetch_assoc()):?>
         <tr>
             <td><?php echo $linha['id'] ?></td>
             <td><?php echo $linha['nome'] ?></td>

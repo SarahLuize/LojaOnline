@@ -29,8 +29,8 @@ if(isset($_POST['btnApagar'])){
             <th>Apagar</th>
         </tr>
         <?php 
-        $resultado = 
-        while($linha = $resultado->fetch_assoc()):?>
+        $resultado = $pdo->query("SELECT * FROM produto");
+        while($linha = $resultado->fetch(PDO::FETCH_ASSOC)):?>
         <tr>
             <td><?php echo $linha['id'] ?></td>
             <td><?php echo $linha['nome'] ?></td>

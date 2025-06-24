@@ -1,3 +1,7 @@
+<?php
+require("conexao.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,7 +14,6 @@
     <h1>LOJA ONLINE</h1>
 
     <a href="produto.php">Lista de produtos</a>
-    <a href="caracteristica.php">Lista de produtos</a>
     <br>
     <!-- <a href="#">#</a> -->
     

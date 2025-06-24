@@ -4,10 +4,14 @@ require("conexao.php");
 if (isset($_POST['btnSalvar'])) {
     $nome = $_POST['txtNome'];
     $preco = $_POST['txtPreco'];
-    $sql = "INSERT INTO Produto (nome, preco, categoria) VALUES('$nome', $preco, 'Informatica')";
-    $resultado = $conexao->query($sql);
-    header("Location: produto.php");
-    $conexao->close();
+
+    $resultado = $pdo->prepare("INSERT INTO Produto (nome, preco, categoria) VALUES(?, ?, ?)");
+    $resultado->execute([$nome, $preco, 'Informatica']);
+
+    //$sql = "INSERT INTO Produto (nome, preco, categoria) VALUES('$nome', $preco, 'Informatica')";
+    //$resultado = $conexao->query($sql);
+    //header("Location: produto.php");
+    //$conexao->close();
 }
 ?>
 
